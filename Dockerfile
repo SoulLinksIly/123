@@ -20,6 +20,7 @@ RUN chmod +x /*.sh
 
 ENV AUTHORIZED_KEYS **None**
 
+EXPOSE 5901
 EXPOSE 22
 EXPOSE 3389
 CMD ["/debianxp.sh"]
