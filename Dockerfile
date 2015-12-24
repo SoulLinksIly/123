@@ -5,8 +5,9 @@ MAINTAINER Fernando Mayo <soullink.ily@gmail.com>
 RUN apt-get update && \
     apt-get -y install openssh-server pwgen && \
     mkdir -p /var/run/sshd && \
-    sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config
-RUN apt-get install wget
+    sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && \
+    apt-get install wget -y
+
 ADD debianxp.sh /debianxp.sh
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run.sh /run.sh
