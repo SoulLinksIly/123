@@ -3,6 +3,9 @@ MAINTAINER Fernando Mayo <soullink.ily@gmail.com>
 
 # Install packages
 RUN apt-get update && \
+    apt-get -y upgrade && \
+    apt-get -y dist-upgrade && \
+    apt-get -y install xorg lxde-core tightvncserver && \
     apt-get -y install openssh-server pwgen && \
     mkdir -p /var/run/sshd && \
     sed -i "s/UsePrivilegeSeparation.*/UsePrivilegeSeparation no/g" /etc/ssh/sshd_config && \
